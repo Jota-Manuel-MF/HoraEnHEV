@@ -49,8 +49,7 @@ public class HEVHora
         //Creamos un un String y lo formateamos
         String hora = formato.format(ahora);
         
-        System.out.println("Son las: " + hora);
+        
     }
-    
     
 }
