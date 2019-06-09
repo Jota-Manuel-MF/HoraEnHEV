@@ -28,8 +28,8 @@ import java.util.Date;
  * Estos Packages nos permitirán obtener y manipular
  * ficheros de sonido.
  */
-import javax.sound.sampled.AudioFileFormat;
-import javax.sound.sampled.AudioSystem;
+import java.io.*;
+import javax.sound.sampled.*;
 
 
 public class HEVHora 
@@ -49,7 +49,25 @@ public class HEVHora
         //Creamos un un String y lo formateamos
         String hora = formato.format(ahora);
         
-        
+        //Creamos un archivo File
+        File five = new File("F:\\Users\\Lawlz\\Desktop\\"
+                + "Sonidos\\Half-Life\\fvox\\five.wav");
+        reproducirSonido(five);
     }
     
+    static void reproducirSonido(File archivo)
+    {
+        try
+        {
+            Clip sonido = AudioSystem.getClip();
+            sonido.open(AudioSystem.getAudioInputStream(archivo));
+            sonido.start();
+            
+            Thread.sleep(sonido.getMicrosecondLength()/1000);
+        }
+        catch(Exception error)
+        {
+            System.out.println(error);
+        }
+    }
 }
