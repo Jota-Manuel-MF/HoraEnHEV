@@ -25,13 +25,7 @@ public class HEVHora
         
         miSH.reproducirSonido("Time_is_now");
         
-        //Tomamos las horas
-        switch(miSH.recibirHora().substring(0, 2))
-        {
-            case "18":
-                miSH.reproducirSonido("eighteen");
-                break;
-        }
+        
         
         System.out.print(miSH.recibirHora().substring(0, 2));
     }
