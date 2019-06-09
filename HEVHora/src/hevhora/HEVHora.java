@@ -15,15 +15,25 @@ import java.io.*;
 
 //----------------------------------------------------------------------------
 
-
-
 public class HEVHora 
 {
     public static void main(String[] args) 
     {
         SonidosHoras miSH = new SonidosHoras();
         
-        miSH.reproducirSonido("Five");
+        String comando = "";
+        
+        miSH.reproducirSonido("Time_is_now");
+        
+        //Tomamos las horas
+        switch(miSH.recibirHora().substring(0, 2))
+        {
+            case "18":
+                miSH.reproducirSonido("eighteen");
+                break;
+        }
+        
+        System.out.print(miSH.recibirHora().substring(0, 2));
     }
     
 }
